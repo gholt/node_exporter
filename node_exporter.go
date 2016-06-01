@@ -23,9 +23,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/pandemicsyn/node_exporter/collector"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/common/log"
-	"github.com/prometheus/node_exporter/collector"
 )
 
 const (
