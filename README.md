@@ -1,6 +1,8 @@
-# Node exporter
+# Node exporter [![Build Status](https://travis-ci.org/prometheus/node_exporter.svg)][travis]
 
-[![Build Status](https://travis-ci.org/prometheus/node_exporter.svg)](https://travis-ci.org/prometheus/node_exporter)
+[![CircleCI](https://circleci.com/gh/prometheus/node_exporter/tree/master.svg?style=shield)][circleci]
+[![Docker Repository on Quay](https://quay.io/repository/prometheus/node-exporter/status)][quay]
+[![Docker Pulls](https://img.shields.io/docker/pulls/prom/node-exporter.svg?maxAge=604800)][hub]
 
 Prometheus exporter for machine metrics, written in Go with pluggable metric
 collectors.
@@ -31,7 +33,6 @@ stat | Exposes various statistics from `/proc/stat`. This includes CPU usage, bo
 textfile | Exposes statistics read from local disk. The `--collector.textfile.directory` flag must be set. | _any_
 time | Exposes the current system time. | _any_
 vmstat | Exposes statistics from `/proc/vmstat`. | Linux
-version | Exposes node\_exporter version. | _any_
 
 
 ### Disabled by default
@@ -44,7 +45,7 @@ gmond | Exposes statistics from Ganglia. | _any_
 interrupts | Exposes detailed interrupts statistics. | Linux, OpenBSD
 ipvs | Exposes IPVS status from `/proc/net/ip_vs` and stats from `/proc/net/ip_vs_stats`. | Linux
 ksmd | Exposes kernel and system statistics from `/sys/kernel/mm/ksm`. | Linux
-lastlogin | Exposes the last time there was a login. | _any_
+logind | Exposes session counts from [logind](http://www.freedesktop.org/wiki/Software/systemd/logind/). | Linux
 megacli | Exposes RAID statistics from MegaCLI. | Linux
 meminfo_numa | Exposes memory statistics from `/proc/meminfo_numa`. | Linux
 ntp | Exposes time drift from an NTP server. | _any_
@@ -99,3 +100,9 @@ docker pull prom/node-exporter
 
 docker run -d -p 9100:9100 --net="host" prom/node-exporter
 ```
+
+
+[travis]: https://travis-ci.org/prometheus/node_exporter
+[hub]: https://hub.docker.com/r/prom/node-exporter/
+[circleci]: https://circleci.com/gh/prometheus/node_exporter
+[quay]: https://quay.io/repository/prometheus/node-exporter
